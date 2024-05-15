@@ -1,0 +1,8 @@
+- name: Install Network Tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - net-tools
+    - traceroute
+    - nmap

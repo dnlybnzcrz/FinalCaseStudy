@@ -1,0 +1,18 @@
+---
+    - name: Block Facebook
+      lineinfile:
+        dest: /etc/hosts
+        line: "0.0.0.0 facebook.com www.facebook.com"
+        insertbefore: EOF
+
+    - name: Block Instagram
+      lineinfile:
+        dest: /etc/hosts
+        line: "0.0.0.0 instagram.com www.instagram.com"
+        insertbefore: EOF
+
+    - name: Block Twitter
+      lineinfile:
+        dest: /etc/hosts
+        line: "0.0.0.0 twitter.com www.twitter.com"
+        insertbefore: EOF

@@ -1,0 +1,11 @@
+- name: Install essential Packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - vim
+    - htop
+    - curl
+    - wget
+    - unzip
+    - git

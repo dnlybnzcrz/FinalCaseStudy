@@ -1,0 +1,21 @@
+---
+    - name: Install Chrony package
+      apt:
+        name: chrony
+        state: present
+
+    - name: Start and Enable Chrony
+      service:
+        name: chrony
+        state: started
+        enabled: yes
+
+    - name: Configure Chrony servers
+      template:
+        src: templates/chrony.conf.j2
+        dest: /etc/chrony/chrony.conf
+
+    - name: Restart Chrony service
+      service:
+        name: chrony
+        state: restarted

@@ -1,0 +1,7 @@
+- name: Install System Monitoring Tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - sysstat
+    - iotop

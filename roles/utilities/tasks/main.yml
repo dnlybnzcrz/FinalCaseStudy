@@ -1,0 +1,11 @@
+- name: Install System Utilities
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - tree
+    - jq
+    - p7zip-full
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common

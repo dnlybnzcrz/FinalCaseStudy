@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  roles:
+      - patch
+      - packages
+      - chrony
+      - fail2ban
+      - firewalld
+      - utilities
+
+- hosts: admin
+  become: true
+  roles:
+      - monitoring_tools
+      - network_tools
+      - docker
+
+- hosts: user
+  become: true
+  roles:
+      - motd
+      - restrict
+      - set_role
